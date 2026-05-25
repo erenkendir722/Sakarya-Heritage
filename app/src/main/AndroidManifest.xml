@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Firebase + osmdroid network erişimi -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Kullanıcı konumunu haritada göstermek için -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SakaryaMiras"
+        android:usesCleartextTraffic="true">
+
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SakaryaMiras.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.detail.LocationDetailActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="location"
+                    android:scheme="sakaryamiras" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.routes.RoutesListActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ui.routes.RouteDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.routes.RoutesListActivity" />
+
+        <activity
+            android:name=".ui.favorites.FavoritesActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ui.about.AboutActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ui.auth.AuthActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ui.admin.AdminDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.admin.locations.AdminLocationsListActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.AdminDashboardActivity" />
+
+        <activity
+            android:name=".ui.admin.locations.AdminLocationFormActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.locations.AdminLocationsListActivity" />
+
+        <activity
+            android:name=".ui.admin.routes.AdminRoutesListActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.AdminDashboardActivity" />
+
+        <activity
+            android:name=".ui.admin.routes.AdminRouteFormActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.routes.AdminRoutesListActivity" />
+
+        <activity
+            android:name=".ui.admin.categories.AdminCategoriesActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.AdminDashboardActivity" />
+    </application>
+
+</manifest>

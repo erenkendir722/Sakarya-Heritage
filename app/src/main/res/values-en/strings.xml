@@ -1,0 +1,150 @@
+<resources>
+    <string name="app_name">Sakarya Heritage</string>
+    <string name="app_tagline">Heritage of Sakarya</string>
+
+    <!-- General -->
+    <string name="loading">Loading…</string>
+    <string name="error_generic">An error occurred</string>
+    <string name="error_no_internet">No internet connection</string>
+    <string name="empty_list">No data yet</string>
+    <string name="retry">Retry</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+    <string name="confirm_delete_title">Confirm deletion?</string>
+    <string name="confirm_delete_message">This action cannot be undone.</string>
+
+    <!-- Map -->
+    <string name="map_title">Map</string>
+    <string name="menu_routes">Routes</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="menu_offline_download">Download offline</string>
+    <string name="menu_about">About</string>
+    <string name="menu_admin">Administrator</string>
+    <string name="filter_all_eras">All periods</string>
+
+    <!-- Location Detail -->
+    <string name="action_directions">Directions</string>
+    <string name="action_listen">Listen</string>
+    <string name="action_favorite">Favorite</string>
+    <string name="action_unfavorite">Unfavorite</string>
+    <string name="action_share">Share</string>
+    <string name="label_built_year">Built: %1$d</string>
+    <string name="label_district">District: %1$s</string>
+    <string name="before_label">Before</string>
+    <string name="after_label">After</string>
+    <string name="share_template">%1$s — a historical site in %2$s/Sakarya. See on map: https://maps.google.com/?q=%3$f,%4$f — via Sakarya Heritage app</string>
+
+    <!-- Routes -->
+    <string name="routes_title">Themed Routes</string>
+    <string name="route_duration">%1$d min</string>
+    <string name="route_distance">%1$.1f km</string>
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_medium">Medium</string>
+    <string name="difficulty_hard">Hard</string>
+
+    <!-- Favorites -->
+    <string name="favorites_title">My Favorites</string>
+    <string name="favorites_empty">You haven\'t added any favorites yet.\nTap the ★ icon on a location detail.</string>
+    <string name="favorite_added">Added to favorites</string>
+    <string name="favorite_removed">Removed from favorites</string>
+
+    <!-- Offline map -->
+    <string name="offline_download_title">Download offline map</string>
+    <string name="offline_download_message">Map tiles for the Sakarya region will be downloaded to your device (about 30-60 MB). The map will work without internet. Continue?</string>
+    <string name="offline_downloading">Downloading: %1$d / %2$d tiles</string>
+    <string name="offline_done">Offline map ready</string>
+    <string name="offline_failed">Download failed</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="about_description">Sakarya Heritage Map brings together the historical and cultural buildings of Sakarya province on one map. You can compare old and new photos of buildings from various periods from Roman to Republican times, and explore the city through themed routes.</string>
+    <string name="about_sources_title">Sources</string>
+    <string name="about_sources">• Wikimedia Commons\n• Sakarya Metropolitan Municipality Archive\n• Ministry of Culture and Tourism\n• OpenStreetMap (map tiles)</string>
+    <string name="about_version">Version 1.0</string>
+
+    <!-- Search -->
+    <string name="search_hint">Search location, category or period…</string>
+
+    <!-- Auth -->
+    <string name="auth_login_title">Sign In</string>
+    <string name="auth_signup_title">Create Account</string>
+    <string name="auth_email_hint">Email</string>
+    <string name="auth_password_hint">Password (min 6 chars)</string>
+    <string name="auth_login_button">Sign In</string>
+    <string name="auth_signup_button">Create Account</string>
+    <string name="auth_switch_to_signup">No account? Create one</string>
+    <string name="auth_switch_to_login">Already have an account? Sign in</string>
+    <string name="auth_login_error">Sign in failed. Wrong email or password.</string>
+    <string name="auth_signup_error">Account creation failed: %1$s</string>
+    <string name="auth_signup_success">Account created, welcome!</string>
+    <string name="auth_password_too_short">Password must be at least 6 characters</string>
+
+    <!-- QR Code -->
+    <string name="menu_qr_scan">Scan QR</string>
+    <string name="qr_scan_prompt">Point your camera at the QR code next to the location</string>
+    <string name="qr_scan_invalid">Invalid QR code</string>
+    <string name="qr_scan_not_found">Location not found</string>
+    <string name="qr_show_title">Location QR Code</string>
+    <string name="qr_show_hint">Print this QR and place it next to the location. Users scanning it with their phone will be taken directly to the detail page.</string>
+    <string name="qr_show_button">Show QR</string>
+    <string name="qr_share_subject">%1$s — Sakarya Heritage QR</string>
+
+    <!-- Drawer / Account -->
+    <string name="drawer_open">Open menu</string>
+    <string name="drawer_close">Close menu</string>
+    <string name="menu_language">Dil / Language</string>
+    <string name="dialog_language_title">Choose language</string>
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="account_not_logged_in">Not signed in</string>
+    <string name="account_logged_in_as">Signed in: %1$s</string>
+    <string name="account_admin_panel">Admin Panel</string>
+    <string name="account_logout">Sign Out</string>
+
+    <!-- Admin -->
+    <string name="admin_login_title">Administrator Sign In</string>
+    <string name="admin_not_authorized">This account does not have admin permissions.</string>
+
+    <string name="admin_dashboard_title">Admin Panel</string>
+    <string name="admin_locations">Locations</string>
+    <string name="admin_routes">Routes</string>
+    <string name="admin_categories">Categories</string>
+    <string name="admin_logout">Sign Out</string>
+    <string name="admin_count_format">%1$d items</string>
+
+    <!-- Admin Form -->
+    <string name="form_name">Name (Turkish)</string>
+    <string name="form_name_en">Name (English, optional)</string>
+    <string name="form_description">Description (Turkish)</string>
+    <string name="form_description_en">Description (English, optional)</string>
+    <string name="form_district">District</string>
+    <string name="form_category">Category</string>
+    <string name="form_era">Period</string>
+    <string name="form_built_year">Built year</string>
+    <string name="form_latitude">Latitude</string>
+    <string name="form_longitude">Longitude</string>
+    <string name="form_pick_on_map">Pick on map</string>
+    <string name="form_historical_image_url">Historical photo URL</string>
+    <string name="form_current_image_url">Current photo URL</string>
+    <string name="form_audio_url">Audio guide URL (optional)</string>
+    <string name="form_required">Required field</string>
+    <string name="form_save_success">Saved</string>
+    <string name="form_save_error">Save failed: %1$s</string>
+
+    <string name="form_route_name">Route name</string>
+    <string name="form_route_theme">Theme</string>
+    <string name="form_route_duration">Duration (minutes)</string>
+    <string name="form_route_distance">Distance (km)</string>
+    <string name="form_route_difficulty">Difficulty</string>
+    <string name="form_route_cover_url">Cover photo URL</string>
+    <string name="form_route_stops">Stops</string>
+    <string name="form_add_stop">Add stop</string>
+
+    <string name="form_category_name">Category name</string>
+    <string name="form_category_icon">Icon</string>
+    <string name="form_category_color">Color</string>
+</resources>

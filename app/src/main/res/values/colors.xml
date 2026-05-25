@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Marka renkleri -->
+    <color name="brand_primary">#C9942C</color>
+    <color name="brand_primary_dark">#8B6914</color>
+    <color name="brand_accent">#1F6B7A</color>
+    <color name="brand_background">#FAF7F2</color>
+    <color name="brand_surface">#FFFFFF</color>
+    <color name="brand_text">#3D2E1A</color>
+    <color name="brand_text_secondary">#6B5841</color>
+    <color name="brand_divider">#E0D9CC</color>
+
+    <!-- Dönem renkleri (haritada marker'lar için) -->
+    <color name="era_roma">#8B4513</color>
+    <color name="era_bizans">#6A0DAD</color>
+    <color name="era_osmanli">#C9942C</color>
+    <color name="era_cumhuriyet">#C8102E</color>
+    <color name="era_default">#666666</color>
+
+    <!-- Durum renkleri -->
+    <color name="success">#2E7D32</color>
+    <color name="error">#C62828</color>
+    <color name="warning">#F57C00</color>
+</resources>

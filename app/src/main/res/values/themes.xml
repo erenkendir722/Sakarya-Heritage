@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.SakaryaMiras" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/brand_accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/brand_background</item>
+        <item name="colorSurface">@color/brand_surface</item>
+        <item name="android:textColorPrimary">@color/brand_text</item>
+        <item name="android:textColorSecondary">@color/brand_text_secondary</item>
+        <item name="android:statusBarColor">@color/brand_primary_dark</item>
+    </style>
+
+    <style name="Theme.SakaryaMiras" parent="Base.Theme.SakaryaMiras" />
+
+    <style name="Theme.SakaryaMiras.Splash" parent="Theme.SakaryaMiras">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/brand_primary</item>
+    </style>
+
+    <!-- Dönem rozeti stili -->
+    <style name="EraBadge">
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/bg_era_badge</item>
+    </style>
+
+    <!-- Drawer satır stili -->
+    <style name="DrawerItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:background">@drawable/bg_drawer_item</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="DrawerItemText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:textColor">@color/brand_text</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+</resources>

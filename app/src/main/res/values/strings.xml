@@ -1,0 +1,150 @@
+<resources>
+    <string name="app_name">Sakarya Miras</string>
+    <string name="app_tagline">Sakarya\'nın Mirası</string>
+
+    <!-- Genel -->
+    <string name="loading">Yükleniyor…</string>
+    <string name="error_generic">Bir hata oluştu</string>
+    <string name="error_no_internet">İnternet bağlantısı yok</string>
+    <string name="empty_list">Henüz veri yok</string>
+    <string name="retry">Tekrar dene</string>
+    <string name="ok">Tamam</string>
+    <string name="cancel">İptal</string>
+    <string name="save">Kaydet</string>
+    <string name="delete">Sil</string>
+    <string name="edit">Düzenle</string>
+    <string name="add">Ekle</string>
+    <string name="confirm_delete_title">Silmeyi onaylıyor musun?</string>
+    <string name="confirm_delete_message">Bu işlem geri alınamaz.</string>
+
+    <!-- Harita -->
+    <string name="map_title">Harita</string>
+    <string name="menu_routes">Rotalar</string>
+    <string name="menu_favorites">Favoriler</string>
+    <string name="menu_offline_download">Offline indir</string>
+    <string name="menu_about">Hakkında</string>
+    <string name="menu_admin">Yönetici</string>
+    <string name="filter_all_eras">Tüm dönemler</string>
+
+    <!-- Lokasyon Detayı -->
+    <string name="action_directions">Yol tarifi</string>
+    <string name="action_listen">Dinle</string>
+    <string name="action_favorite">Favorile</string>
+    <string name="action_unfavorite">Favorilerden çıkar</string>
+    <string name="action_share">Paylaş</string>
+    <string name="label_built_year">Yapım yılı: %1$d</string>
+    <string name="label_district">İlçe: %1$s</string>
+    <string name="before_label">Önce</string>
+    <string name="after_label">Sonra</string>
+    <string name="share_template">%1$s — %2$s/Sakarya\'da tarihi bir yapı. Haritada gör: https://maps.google.com/?q=%3$f,%4$f — Sakarya Miras uygulamasından</string>
+
+    <!-- Rotalar -->
+    <string name="routes_title">Tematik Rotalar</string>
+    <string name="route_duration">%1$d dk</string>
+    <string name="route_distance">%1$.1f km</string>
+    <string name="difficulty_easy">Kolay</string>
+    <string name="difficulty_medium">Orta</string>
+    <string name="difficulty_hard">Zor</string>
+
+    <!-- Favoriler -->
+    <string name="favorites_title">Favorilerim</string>
+    <string name="favorites_empty">Henüz favori eklemedin.\nLokasyon detayında ★ ikonuna dokun.</string>
+    <string name="favorite_added">Favorilere eklendi</string>
+    <string name="favorite_removed">Favorilerden çıkarıldı</string>
+
+    <!-- Offline harita -->
+    <string name="offline_download_title">Offline harita indir</string>
+    <string name="offline_download_message">Sakarya bölgesi harita karoları cihazınıza indirilecek (yaklaşık 30-60 MB). İnternet olmadan da harita çalışacak. Devam edilsin mi?</string>
+    <string name="offline_downloading">İndiriliyor: %1$d / %2$d karo</string>
+    <string name="offline_done">Offline harita hazır</string>
+    <string name="offline_failed">İndirme başarısız</string>
+
+    <!-- Hakkında -->
+    <string name="about_title">Hakkında</string>
+    <string name="about_description">Sakarya Tarihi Miras Haritası, Sakarya ilindeki tarihi ve kültürel yapıları tek bir harita üzerinde gezilebilir kılar. Roma\'dan Cumhuriyet\'e kadar çeşitli dönemlerden yapıların eski ve yeni fotoğraflarını yan yana görebilir, tematik rotalarla şehri keşfedebilirsin.</string>
+    <string name="about_sources_title">Kaynaklar</string>
+    <string name="about_sources">• Wikimedia Commons\n• Sakarya Büyükşehir Belediyesi Arşivi\n• Kültür ve Turizm Bakanlığı\n• OpenStreetMap (harita altlığı)</string>
+    <string name="about_version">Sürüm 1.0</string>
+
+    <!-- Arama -->
+    <string name="search_hint">Lokasyon, kategori veya dönem ara…</string>
+
+    <!-- Auth -->
+    <string name="auth_login_title">Giriş Yap</string>
+    <string name="auth_signup_title">Hesap Aç</string>
+    <string name="auth_email_hint">E-posta</string>
+    <string name="auth_password_hint">Şifre (en az 6 karakter)</string>
+    <string name="auth_login_button">Giriş Yap</string>
+    <string name="auth_signup_button">Hesap Aç</string>
+    <string name="auth_switch_to_signup">Hesabın yok mu? Hesap aç</string>
+    <string name="auth_switch_to_login">Zaten hesabın var mı? Giriş yap</string>
+    <string name="auth_login_error">Giriş başarısız. E-posta veya şifre yanlış.</string>
+    <string name="auth_signup_error">Hesap açılamadı: %1$s</string>
+    <string name="auth_signup_success">Hesap açıldı, hoş geldin!</string>
+    <string name="auth_password_too_short">Şifre en az 6 karakter olmalı</string>
+
+    <!-- QR Kod -->
+    <string name="menu_qr_scan">QR Oku</string>
+    <string name="qr_scan_prompt">Lokasyonun yanındaki QR kodu kameraya doğrult</string>
+    <string name="qr_scan_invalid">Geçersiz QR kod</string>
+    <string name="qr_scan_not_found">Lokasyon bulunamadı</string>
+    <string name="qr_show_title">Lokasyon QR Kodu</string>
+    <string name="qr_show_hint">Bu QR\'ı bastırıp lokasyonun yanına asabilirsin. Kullanıcılar telefonla okutunca direkt detay sayfasına gelir.</string>
+    <string name="qr_show_button">QR\'ı Göster</string>
+    <string name="qr_share_subject">%1$s — Sakarya Miras QR</string>
+
+    <!-- Drawer / Account -->
+    <string name="drawer_open">Menüyü aç</string>
+    <string name="drawer_close">Menüyü kapat</string>
+    <string name="menu_language">Dil / Language</string>
+    <string name="dialog_language_title">Dil seç</string>
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="account_not_logged_in">Hesap yok</string>
+    <string name="account_logged_in_as">Giriş yapıldı: %1$s</string>
+    <string name="account_admin_panel">Yönetici Paneli</string>
+    <string name="account_logout">Çıkış</string>
+
+    <!-- Admin (eski; geriye dönük) -->
+    <string name="admin_login_title">Yönetici Girişi</string>
+    <string name="admin_not_authorized">Bu hesap admin yetkisine sahip değil.</string>
+
+    <string name="admin_dashboard_title">Yönetici Paneli</string>
+    <string name="admin_locations">Lokasyonlar</string>
+    <string name="admin_routes">Rotalar</string>
+    <string name="admin_categories">Kategoriler</string>
+    <string name="admin_logout">Çıkış</string>
+    <string name="admin_count_format">%1$d adet</string>
+
+    <!-- Admin Form -->
+    <string name="form_name">Ad (Türkçe)</string>
+    <string name="form_name_en">Ad (İngilizce, opsiyonel)</string>
+    <string name="form_description">Açıklama (Türkçe)</string>
+    <string name="form_description_en">Açıklama (İngilizce, opsiyonel)</string>
+    <string name="form_district">İlçe</string>
+    <string name="form_category">Kategori</string>
+    <string name="form_era">Dönem</string>
+    <string name="form_built_year">Yapım yılı</string>
+    <string name="form_latitude">Enlem</string>
+    <string name="form_longitude">Boylam</string>
+    <string name="form_pick_on_map">Haritadan seç</string>
+    <string name="form_historical_image_url">Eski fotoğraf URL</string>
+    <string name="form_current_image_url">Yeni fotoğraf URL</string>
+    <string name="form_audio_url">Sesli rehber URL (opsiyonel)</string>
+    <string name="form_required">Zorunlu alan</string>
+    <string name="form_save_success">Kaydedildi</string>
+    <string name="form_save_error">Kaydedilemedi: %1$s</string>
+
+    <string name="form_route_name">Rota adı</string>
+    <string name="form_route_theme">Tema</string>
+    <string name="form_route_duration">Süre (dakika)</string>
+    <string name="form_route_distance">Mesafe (km)</string>
+    <string name="form_route_difficulty">Zorluk</string>
+    <string name="form_route_cover_url">Kapak fotoğrafı URL</string>
+    <string name="form_route_stops">Duraklar</string>
+    <string name="form_add_stop">Durak ekle</string>
+
+    <string name="form_category_name">Kategori adı</string>
+    <string name="form_category_icon">İkon</string>
+    <string name="form_category_color">Renk</string>
+</resources>

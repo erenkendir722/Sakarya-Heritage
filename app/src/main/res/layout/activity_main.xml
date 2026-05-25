@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/brand_primary"
+                app:title="@string/app_name"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <org.osmdroid.views.MapView
+                android:id="@+id/map_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/map_loading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="@color/brand_primary" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_my_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="96dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_my_location"
+                app:backgroundTint="@color/white"
+                app:tint="@color/brand_primary_dark" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="#CCFFFFFF"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/era_filter_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="12dp" />
+            </HorizontalScrollView>
+
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/brand_surface"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/brand_primary"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/app_tagline"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_routes"
+            style="@style/DrawerItem">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_route"
+                app:tint="@color/brand_text_secondary" />
+
+            <TextView
+                style="@style/DrawerItemText"
+                android:text="@string/menu_routes" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_favorites"
+            style="@style/DrawerItem">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_favorite_filled"
+                app:tint="@color/brand_text_secondary" />
+
+            <TextView
+                style="@style/DrawerItemText"
+                android:text="@string/menu_favorites" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_search"
+            style="@style/DrawerItem">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_search"
+                app:tint="@color/brand_text_secondary" />
+
+            <TextView
+                style="@style/DrawerItemText"
+                android:text="@string/search_hint" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_qr_scan"
+            style="@style/DrawerItem">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_qr_scan"
+                app:tint="@color/brand_text_secondary" />
+
+            <TextView
+                style="@style/DrawerItemText"
+                android:text="@string/menu_qr_scan" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="4dp"
+            android:background="@color/brand_divider" />
+
+        <LinearLayout
+            android:id="@+id/nav_offline"
+            style="@style/DrawerItem">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_download"
+                app:tint="@color/brand_text_secondary" />
+
+            <TextView
+                style="@style/DrawerItemText"
+                android:text="@string/menu_offline_download" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_language"
+            style="@style/DrawerItem">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_language"
+                app:tint="@color/brand_text_secondary" />
+
+            <TextView
+                style="@style/DrawerItemText"
+                android:text="@string/menu_language" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_about"
+            style="@style/DrawerItem">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_admin"
+                app:tint="@color/brand_text_secondary" />
+
+            <TextView
+                style="@style/DrawerItemText"
+                android:text="@string/menu_about" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/brand_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/auth_logged_out_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_not_logged_in"
+                    android:textColor="@color/brand_text_secondary"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_drawer_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/auth_login_button"
+                    app:icon="@drawable/ic_login"
+                    app:iconGravity="textStart" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_drawer_signup"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/auth_signup_button"
+                    app:icon="@drawable/ic_person_add"
+                    app:iconGravity="textStart" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/auth_logged_in_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/drawer_user_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/brand_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="user@email.com" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_admin_panel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/account_admin_panel"
+                    android:visibility="gone"
+                    app:icon="@drawable/ic_admin"
+                    app:iconGravity="textStart" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_drawer_logout"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/account_logout"
+                    app:icon="@drawable/ic_logout"
+                    app:iconGravity="textStart" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
