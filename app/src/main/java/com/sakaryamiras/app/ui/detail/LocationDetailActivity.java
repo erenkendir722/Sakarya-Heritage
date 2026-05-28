@@ -162,7 +162,7 @@ public class LocationDetailActivity extends AppCompatActivity {
             return;
         }
         eraBadge.setVisibility(View.VISIBLE);
-        eraBadge.setText(era.getName());
+        eraBadge.setText(LocaleUtil.localizedEraName(this, era));
         Drawable bg = eraBadge.getBackground();
         if (bg instanceof GradientDrawable) {
             ((GradientDrawable) bg.mutate()).setColor(EraColorUtil.colorOf(era));
@@ -172,8 +172,9 @@ public class LocationDetailActivity extends AppCompatActivity {
     private void bindCategory(@Nullable Category category) {
         if (currentLocation == null) return;
         StringBuilder sb = new StringBuilder();
-        if (category != null && category.getName() != null) {
-            sb.append(category.getName());
+        String localizedCat = LocaleUtil.localizedCategoryName(this, category);
+        if (localizedCat != null) {
+            sb.append(localizedCat);
         }
         if (currentLocation.getDistrict() != null) {
             if (sb.length() > 0) sb.append(" • ");

@@ -1,4 +1,4 @@
-package com.sakaryamiras.app.ui.admin.categories;
+package com.sakaryamiras.app.ui.admin.eras;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -20,18 +20,18 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.sakaryamiras.app.R;
-import com.sakaryamiras.app.adapter.CategoryAdapter;
-import com.sakaryamiras.app.model.Category;
-import com.sakaryamiras.app.repository.CategoryRepository;
+import com.sakaryamiras.app.adapter.EraAdapter;
+import com.sakaryamiras.app.model.Era;
+import com.sakaryamiras.app.repository.EraRepository;
 
-public class AdminCategoriesActivity extends AppCompatActivity {
+public class AdminErasActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefresh;
     private TextView emptyView;
-    private CategoryAdapter adapter;
+    private EraAdapter adapter;
 
-    private final CategoryRepository categoryRepo = new CategoryRepository();
+    private final EraRepository eraRepo = new EraRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,22 +42,22 @@ public class AdminCategoriesActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(v -> finish());
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(R.string.admin_categories);
+            getSupportActionBar().setTitle(R.string.admin_eras);
         }
 
         recyclerView = findViewById(R.id.list);
         swipeRefresh = findViewById(R.id.swipe_refresh);
         emptyView = findViewById(R.id.empty_view);
 
-        adapter = new CategoryAdapter(new CategoryAdapter.OnCategoryActionListener() {
+        adapter = new EraAdapter(new EraAdapter.OnEraActionListener() {
             @Override
-            public void onEdit(@NonNull Category category) {
-                showDialog(category);
+            public void onEdit(@NonNull Era era) {
+                showDialog(era);
             }
 
             @Override
-            public void onDelete(@NonNull Category category) {
-                confirmDelete(category);
+            public void onDelete(@NonNull Era era) {
+                confirmDelete(era);
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -77,7 +77,7 @@ public class AdminCategoriesActivity extends AppCompatActivity {
 
     private void load() {
         swipeRefresh.setRefreshing(true);
-        categoryRepo.getAll()
+        eraRepo.getAll()
                 .addOnSuccessListener(items -> {
                     swipeRefresh.setRefreshing(false);
                     if (items.isEmpty()) {
@@ -95,17 +95,23 @@ public class AdminCategoriesActivity extends AppCompatActivity {
                 });
     }
 
-    private void showDialog(@Nullable Category existing) {
-        View view = LayoutInflater.from(this).inflate(R.layout.dialog_category_form, null);
-        TextInputEditText nameInput = view.findViewById(R.id.dialog_category_name);
-        TextInputEditText nameEnInput = view.findViewById(R.id.dialog_category_name_en);
-        TextInputEditText iconInput = view.findViewById(R.id.dialog_category_icon);
-        TextInputEditText colorInput = view.findViewById(R.id.dialog_category_color);
+    private void showDialog(@Nullable Era existing) {
+        View view = LayoutInflater.from(this).inflate(R.layout.dialog_era_form, null);
+        TextInputEditText nameInput = view.findViewById(R.id.dialog_era_name);
+        TextInputEditText nameEnInput = view.findViewById(R.id.dialog_era_name_en);
+        TextInputEditText startInput = view.findViewById(R.id.dialog_era_start);
+        TextInputEditText endInput = view.findViewById(R.id.dialog_era_end);
+        TextInputEditText colorInput = view.findViewById(R.id.dialog_era_color);
 
         if (existing != null) {
             nameInput.setText(existing.getName());
             nameEnInput.setText(existing.getNameEn());
-            iconInput.setText(existing.getIcon());
+            if (existing.getStartYear() != null) {
+                startInput.setText(String.valueOf(existing.getStartYear()));
+            }
+            if (existing.getEndYear() != null) {
+                endInput.setText(String.valueOf(existing.getEndYear()));
+            }
             colorInput.setText(existing.getColorHex());
         }
 
@@ -118,14 +124,17 @@ public class AdminCategoriesActivity extends AppCompatActivity {
                         Toast.makeText(this, R.string.form_required, Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    Category category = existing != null ? existing : new Category();
-                    category.setName(name);
-                    category.setNameEn(text(nameEnInput));
-                    category.setIcon(text(iconInput));
-                    category.setColorHex(text(colorInput));
+                    Era era = existing != null ? existing : new Era();
+                    era.setName(name);
+                    era.setNameEn(text(nameEnInput));
+                    String startStr = text(startInput);
+                    era.setStartYear(TextUtils.isEmpty(startStr) ? null : Integer.parseInt(startStr));
+                    String endStr = text(endInput);
+                    era.setEndYear(TextUtils.isEmpty(endStr) ? null : Integer.parseInt(endStr));
+                    era.setColorHex(text(colorInput));
                     Task<Void> task = existing != null
-                            ? categoryRepo.update(category)
-                            : categoryRepo.create(category);
+                            ? eraRepo.update(era)
+                            : eraRepo.create(era);
                     task.addOnSuccessListener(unused -> {
                         Toast.makeText(this, R.string.form_save_success, Toast.LENGTH_SHORT).show();
                         load();
@@ -137,12 +146,12 @@ public class AdminCategoriesActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void confirmDelete(Category category) {
+    private void confirmDelete(Era era) {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.confirm_delete_title)
                 .setMessage(R.string.confirm_delete_message)
                 .setPositiveButton(R.string.delete, (d, w) -> {
-                    categoryRepo.delete(category.getId())
+                    eraRepo.delete(era.getId())
                             .addOnSuccessListener(unused -> load())
                             .addOnFailureListener(e -> Toast.makeText(this,
                                     getString(R.string.form_save_error, e.getMessage()),

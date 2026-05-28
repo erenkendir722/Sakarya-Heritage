@@ -15,9 +15,11 @@ import androidx.cardview.widget.CardView;
 import com.sakaryamiras.app.R;
 import com.sakaryamiras.app.repository.AuthRepository;
 import com.sakaryamiras.app.repository.CategoryRepository;
+import com.sakaryamiras.app.repository.EraRepository;
 import com.sakaryamiras.app.repository.LocationRepository;
 import com.sakaryamiras.app.repository.RouteRepository;
 import com.sakaryamiras.app.ui.admin.categories.AdminCategoriesActivity;
+import com.sakaryamiras.app.ui.admin.eras.AdminErasActivity;
 import com.sakaryamiras.app.ui.admin.locations.AdminLocationsListActivity;
 import com.sakaryamiras.app.ui.admin.routes.AdminRoutesListActivity;
 
@@ -26,10 +28,12 @@ public class AdminDashboardActivity extends AppCompatActivity {
     private TextView countLocations;
     private TextView countRoutes;
     private TextView countCategories;
+    private TextView countEras;
 
     private final LocationRepository locationRepo = new LocationRepository();
     private final RouteRepository routeRepo = new RouteRepository();
     private final CategoryRepository categoryRepo = new CategoryRepository();
+    private final EraRepository eraRepo = new EraRepository();
     private final AuthRepository authRepo = new AuthRepository();
 
     @Override
@@ -43,6 +47,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         countLocations = findViewById(R.id.count_locations);
         countRoutes = findViewById(R.id.count_routes);
         countCategories = findViewById(R.id.count_categories);
+        countEras = findViewById(R.id.count_eras);
 
         verifyAdminAccess();
 
@@ -52,6 +57,8 @@ public class AdminDashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AdminRoutesListActivity.class)));
         ((CardView) findViewById(R.id.card_categories)).setOnClickListener(v ->
                 startActivity(new Intent(this, AdminCategoriesActivity.class)));
+        ((CardView) findViewById(R.id.card_eras)).setOnClickListener(v ->
+                startActivity(new Intent(this, AdminErasActivity.class)));
     }
 
     @Override
@@ -88,6 +95,8 @@ public class AdminDashboardActivity extends AppCompatActivity {
                 countRoutes.setText(getString(R.string.admin_count_format, list.size())));
         categoryRepo.getAll().addOnSuccessListener(list ->
                 countCategories.setText(getString(R.string.admin_count_format, list.size())));
+        eraRepo.getAll().addOnSuccessListener(list ->
+                countEras.setText(getString(R.string.admin_count_format, list.size())));
     }
 
     @Override

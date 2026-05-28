@@ -130,7 +130,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
 
             if (era != null) {
                 eraBadge.setVisibility(View.VISIBLE);
-                eraBadge.setText(era.getName());
+                eraBadge.setText(LocaleUtil.localizedEraName(itemView.getContext(), era));
                 Drawable bg = eraBadge.getBackground();
                 if (bg instanceof GradientDrawable) {
                     ((GradientDrawable) bg.mutate()).setColor(EraColorUtil.colorOf(era));

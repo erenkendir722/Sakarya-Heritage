@@ -6,6 +6,8 @@ import android.content.res.Configuration;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.sakaryamiras.app.model.Category;
+import com.sakaryamiras.app.model.Era;
 import com.sakaryamiras.app.model.Location;
 
 import java.util.Locale;
@@ -37,6 +39,24 @@ public final class LocaleUtil {
             return location.getDescriptionEn();
         }
         return location.getDescription();
+    }
+
+    @Nullable
+    public static String localizedEraName(@NonNull Context context, @Nullable Era era) {
+        if (era == null) return null;
+        if (isEnglish(context) && hasText(era.getNameEn())) {
+            return era.getNameEn();
+        }
+        return era.getName();
+    }
+
+    @Nullable
+    public static String localizedCategoryName(@NonNull Context context, @Nullable Category category) {
+        if (category == null) return null;
+        if (isEnglish(context) && hasText(category.getNameEn())) {
+            return category.getNameEn();
+        }
+        return category.getName();
     }
 
     private static boolean hasText(@Nullable String s) {

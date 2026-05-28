@@ -144,7 +144,37 @@
     <string name="form_route_stops">Duraklar</string>
     <string name="form_add_stop">Durak ekle</string>
 
-    <string name="form_category_name">Kategori adı</string>
+    <string name="form_category_name">Kategori adı (Türkçe)</string>
+    <string name="form_category_name_en">Kategori adı (İngilizce, opsiyonel)</string>
     <string name="form_category_icon">İkon</string>
     <string name="form_category_color">Renk</string>
+
+    <!-- Admin form titles & spinner placeholders -->
+    <string name="title_edit_location">Lokasyonu Düzenle</string>
+    <string name="title_new_location">Yeni Lokasyon</string>
+    <string name="title_edit_route">Rotayı Düzenle</string>
+    <string name="title_new_route">Yeni Rota</string>
+    <string name="spinner_select_category">— Kategori seç —</string>
+    <string name="spinner_select_era">— Dönem seç —</string>
+    <string name="spinner_select_location">— Lokasyon seç —</string>
+    <string name="form_invalid_coordinates">Geçersiz koordinat</string>
+
+    <!-- Main / drawer toasts -->
+    <string name="search_coming_soon">Arama yakında</string>
+    <string name="signed_out">Çıkış yapıldı</string>
+    <string name="my_location_not_found">Konum bulunamadı</string>
+
+    <!-- Arama ekranı -->
+    <string name="search_title">Ara</string>
+    <string name="search_input_hint">Lokasyon, kategori veya dönem ara…</string>
+    <string name="search_empty_initial">Lokasyon, kategori veya dönem adı yaz</string>
+    <string name="search_no_results">Sonuç bulunamadı</string>
+
+    <!-- Dönem admin -->
+    <string name="admin_eras">Dönemler</string>
+    <string name="form_era_name">Dönem adı (Türkçe)</string>
+    <string name="form_era_name_en">Dönem adı (İngilizce, opsiyonel)</string>
+    <string name="form_era_start_year">Başlangıç yılı</string>
+    <string name="form_era_end_year">Bitiş yılı</string>
+    <string name="form_era_color">Renk</string>
 </resources>

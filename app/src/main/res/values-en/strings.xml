@@ -144,7 +144,37 @@
     <string name="form_route_stops">Stops</string>
     <string name="form_add_stop">Add stop</string>
 
-    <string name="form_category_name">Category name</string>
+    <string name="form_category_name">Category name (Turkish)</string>
+    <string name="form_category_name_en">Category name (English, optional)</string>
     <string name="form_category_icon">Icon</string>
     <string name="form_category_color">Color</string>
+
+    <!-- Admin form titles & spinner placeholders -->
+    <string name="title_edit_location">Edit Location</string>
+    <string name="title_new_location">New Location</string>
+    <string name="title_edit_route">Edit Route</string>
+    <string name="title_new_route">New Route</string>
+    <string name="spinner_select_category">— Select category —</string>
+    <string name="spinner_select_era">— Select period —</string>
+    <string name="spinner_select_location">— Select location —</string>
+    <string name="form_invalid_coordinates">Invalid coordinates</string>
+
+    <!-- Main / drawer toasts -->
+    <string name="search_coming_soon">Search coming soon</string>
+    <string name="signed_out">Signed out</string>
+    <string name="my_location_not_found">Location not found</string>
+
+    <!-- Search screen -->
+    <string name="search_title">Search</string>
+    <string name="search_input_hint">Search location, category or period…</string>
+    <string name="search_empty_initial">Type a location, category or period name</string>
+    <string name="search_no_results">No results</string>
+
+    <!-- Era admin -->
+    <string name="admin_eras">Periods</string>
+    <string name="form_era_name">Period name (Turkish)</string>
+    <string name="form_era_name_en">Period name (English, optional)</string>
+    <string name="form_era_start_year">Start year</string>
+    <string name="form_era_end_year">End year</string>
+    <string name="form_era_color">Color</string>
 </resources>

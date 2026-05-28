@@ -8,6 +8,7 @@ public class Category {
     private String id;
 
     private String name;
+    private String nameEn;
     private String icon;
     private String colorHex;
 
@@ -36,6 +37,14 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
     }
 
     public String getIcon() {

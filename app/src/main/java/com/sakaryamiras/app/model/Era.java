@@ -8,6 +8,7 @@ public class Era {
     private String id;
 
     private String name;
+    private String nameEn;
     private Integer startYear;
     private Integer endYear;
     private String colorHex;
@@ -38,6 +39,14 @@ public class Era {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
     }
 
     public Integer getStartYear() {

@@ -136,10 +136,9 @@ public class MainActivity extends AppCompatActivity {
                 navigateAndClose(new Intent(this, RoutesListActivity.class)));
         findViewById(R.id.nav_favorites).setOnClickListener(v ->
                 navigateAndClose(new Intent(this, FavoritesActivity.class)));
-        findViewById(R.id.nav_search).setOnClickListener(v -> {
-            drawerLayout.closeDrawer(Gravity.END);
-            Toast.makeText(this, "Arama yakında", Toast.LENGTH_SHORT).show();
-        });
+        findViewById(R.id.nav_search).setOnClickListener(v ->
+                navigateAndClose(new Intent(this,
+                        com.sakaryamiras.app.ui.search.SearchActivity.class)));
         findViewById(R.id.nav_qr_scan).setOnClickListener(v -> {
             drawerLayout.closeDrawer(Gravity.END);
             launchQrScan();
@@ -165,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_drawer_logout).setOnClickListener(v -> {
             authRepo.signOut();
             refreshAuthState();
-            Toast.makeText(this, "Çıkış yapıldı", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.signed_out, Toast.LENGTH_SHORT).show();
         });
         btnAdminPanel.setOnClickListener(v ->
                 navigateAndClose(new Intent(this, AdminDashboardActivity.class)));
@@ -254,7 +253,9 @@ public class MainActivity extends AppCompatActivity {
         addEraChip(FILTER_ALL, getString(R.string.filter_all_eras),
                 ContextCompat.getColor(this, R.color.brand_primary_dark));
         for (Era era : eras) {
-            addEraChip(era.getId(), era.getName(), EraColorUtil.colorOf(era));
+            addEraChip(era.getId(),
+                    com.sakaryamiras.app.util.LocaleUtil.localizedEraName(this, era),
+                    EraColorUtil.colorOf(era));
         }
     }
 
@@ -304,7 +305,8 @@ public class MainActivity extends AppCompatActivity {
             }
             Marker marker = new Marker(mapView);
             marker.setPosition(new GeoPoint(loc.getLatitude(), loc.getLongitude()));
-            marker.setTitle(loc.getName());
+            String localizedName = com.sakaryamiras.app.util.LocaleUtil.localizedName(this, loc);
+            marker.setTitle(localizedName != null ? localizedName : loc.getName());
             marker.setSubDescription(loc.getDistrict() != null ? loc.getDistrict() : "");
             marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
 
@@ -387,7 +389,7 @@ public class MainActivity extends AppCompatActivity {
                 mapView.getController().animateTo(point);
                 mapView.getController().setZoom(15.0);
             } else {
-                Toast.makeText(this, "Konum bulunamadı", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.my_location_not_found, Toast.LENGTH_SHORT).show();
             }
         });
     }

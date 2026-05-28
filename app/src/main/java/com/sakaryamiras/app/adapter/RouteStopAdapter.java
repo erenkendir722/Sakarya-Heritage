@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sakaryamiras.app.R;
 import com.sakaryamiras.app.model.Location;
 import com.sakaryamiras.app.model.RouteStop;
+import com.sakaryamiras.app.util.LocaleUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -83,7 +84,8 @@ public class RouteStopAdapter extends RecyclerView.Adapter<RouteStopAdapter.Stop
 
         void bind(@NonNull RouteStop stop, @Nullable Location location, int displayOrder) {
             orderView.setText(String.valueOf(displayOrder));
-            nameView.setText(location != null ? location.getName() : "—");
+            String localized = LocaleUtil.localizedName(itemView.getContext(), location);
+            nameView.setText(localized != null ? localized : "—");
 
             if (stop.getNote() != null && !stop.getNote().isEmpty()) {
                 noteView.setVisibility(View.VISIBLE);

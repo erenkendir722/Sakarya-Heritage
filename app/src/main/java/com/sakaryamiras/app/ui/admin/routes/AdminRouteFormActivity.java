@@ -27,6 +27,7 @@ import com.sakaryamiras.app.model.RouteStop;
 import com.sakaryamiras.app.repository.AuthRepository;
 import com.sakaryamiras.app.repository.LocationRepository;
 import com.sakaryamiras.app.repository.RouteRepository;
+import com.sakaryamiras.app.util.LocaleUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,10 +98,10 @@ public class AdminRouteFormActivity extends AppCompatActivity {
 
         String routeId = getIntent().getStringExtra(EXTRA_ROUTE_ID);
         if (routeId != null) {
-            setTitle("Rotayı Düzenle");
+            setTitle(R.string.title_edit_route);
             loadExisting(routeId);
         } else {
-            setTitle("Yeni Rota");
+            setTitle(R.string.title_new_route);
             loadLocations();
         }
     }
@@ -118,8 +119,11 @@ public class AdminRouteFormActivity extends AppCompatActivity {
 
     private ArrayAdapter<String> makeLocationAdapter() {
         List<String> names = new ArrayList<>();
-        names.add("— Lokasyon seç —");
-        for (Location loc : allLocations) names.add(loc.getName());
+        names.add(getString(R.string.spinner_select_location));
+        for (Location loc : allLocations) {
+            String localized = LocaleUtil.localizedName(this, loc);
+            names.add(localized != null ? localized : loc.getName());
+        }
         return new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, names);
     }
 

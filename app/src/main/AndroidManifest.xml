@@ -113,6 +113,16 @@
             android:name=".ui.admin.categories.AdminCategoriesActivity"
             android:exported="false"
             android:parentActivityName=".ui.admin.AdminDashboardActivity" />
+
+        <activity
+            android:name=".ui.admin.eras.AdminErasActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.AdminDashboardActivity" />
+
+        <activity
+            android:name=".ui.search.SearchActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

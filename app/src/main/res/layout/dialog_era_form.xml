@@ -9,11 +9,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/form_category_name"
+        android:hint="@string/form_era_name"
         app:boxBackgroundMode="outline">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/dialog_category_name"
+            android:id="@+id/dialog_era_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textCapWords" />
@@ -23,40 +23,63 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/form_category_name_en"
+        android:hint="@string/form_era_name_en"
         app:boxBackgroundMode="outline">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/dialog_category_name_en"
+            android:id="@+id/dialog_era_name_en"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textCapWords" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/form_category_icon"
-        app:boxBackgroundMode="outline">
+        android:orientation="horizontal">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/dialog_category_icon"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:hint="@string/form_era_start_year"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dialog_era_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:hint="@string/form_era_end_year"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dialog_era_end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/form_category_color"
+        android:hint="@string/form_era_color"
         app:boxBackgroundMode="outline"
         app:helperText="#RRGGBB">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/dialog_category_color"
+            android:id="@+id/dialog_era_color"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />

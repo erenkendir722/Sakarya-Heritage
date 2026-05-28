@@ -26,6 +26,7 @@ import com.sakaryamiras.app.repository.AuthRepository;
 import com.sakaryamiras.app.repository.CategoryRepository;
 import com.sakaryamiras.app.repository.EraRepository;
 import com.sakaryamiras.app.repository.LocationRepository;
+import com.sakaryamiras.app.util.LocaleUtil;
 import com.sakaryamiras.app.util.OfflineMapManager;
 import com.sakaryamiras.app.util.QrCodeUtil;
 
@@ -112,10 +113,10 @@ public class AdminLocationFormActivity extends AppCompatActivity {
 
         String locationId = getIntent().getStringExtra(EXTRA_LOCATION_ID);
         if (locationId != null) {
-            setTitle("Lokasyonu Düzenle");
+            setTitle(R.string.title_edit_location);
             loadExisting(locationId);
         } else {
-            setTitle("Yeni Lokasyon");
+            setTitle(R.string.title_new_location);
             loadDropdowns();
         }
     }
@@ -170,16 +171,16 @@ public class AdminLocationFormActivity extends AppCompatActivity {
 
     private void bindCategorySpinner() {
         List<String> names = new ArrayList<>();
-        names.add("— Kategori seç —");
-        for (Category c : categories) names.add(c.getName());
+        names.add(getString(R.string.spinner_select_category));
+        for (Category c : categories) names.add(LocaleUtil.localizedCategoryName(this, c));
         spinnerCategory.setAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, names));
     }
 
     private void bindEraSpinner() {
         List<String> names = new ArrayList<>();
-        names.add("— Dönem seç —");
-        for (Era e : eras) names.add(e.getName());
+        names.add(getString(R.string.spinner_select_era));
+        for (Era e : eras) names.add(LocaleUtil.localizedEraName(this, e));
         spinnerEra.setAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, names));
     }
@@ -266,7 +267,7 @@ public class AdminLocationFormActivity extends AppCompatActivity {
             location.setLatitude(Double.parseDouble(latStr));
             location.setLongitude(Double.parseDouble(lngStr));
         } catch (NumberFormatException e) {
-            Toast.makeText(this, "Geçersiz koordinat", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.form_invalid_coordinates, Toast.LENGTH_SHORT).show();
             return;
         }
         String yearStr = textOf(inputBuiltYear);

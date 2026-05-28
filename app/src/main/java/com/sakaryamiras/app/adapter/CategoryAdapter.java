@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sakaryamiras.app.R;
 import com.sakaryamiras.app.model.Category;
 import com.sakaryamiras.app.util.EraColorUtil;
+import com.sakaryamiras.app.util.LocaleUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,7 +77,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         }
 
         void bind(@NonNull Category category) {
-            nameView.setText(category.getName());
+            nameView.setText(LocaleUtil.localizedCategoryName(itemView.getContext(), category));
             iconView.setText(category.getIcon() != null ? category.getIcon() : "");
 
             Drawable bg = colorSwatch.getBackground();

@@ -36,6 +36,23 @@ public class EraRepository {
                 });
     }
 
+    public Task<Void> create(@NonNull Era era) {
+        com.google.firebase.firestore.DocumentReference doc = db.collection(COLLECTION).document();
+        era.setId(doc.getId());
+        return doc.set(era);
+    }
+
+    public Task<Void> update(@NonNull Era era) {
+        if (era.getId() == null) {
+            throw new IllegalArgumentException("Era id null");
+        }
+        return db.collection(COLLECTION).document(era.getId()).set(era);
+    }
+
+    public Task<Void> delete(@NonNull String id) {
+        return db.collection(COLLECTION).document(id).delete();
+    }
+
     private List<Era> toList(@NonNull Task<QuerySnapshot> task) {
         List<Era> list = new ArrayList<>();
         if (task.getResult() == null) return list;
