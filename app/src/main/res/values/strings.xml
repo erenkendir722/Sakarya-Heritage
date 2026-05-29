@@ -29,7 +29,7 @@
     <!-- Lokasyon Detayı -->
     <string name="action_directions">Yol tarifi</string>
     <string name="action_listen">Dinle</string>
-    <string name="action_favorite">Favorile</string>
+    <string name="action_favorite">Favorilere ekle</string>
     <string name="action_unfavorite">Favorilerden çıkar</string>
     <string name="action_share">Paylaş</string>
     <string name="label_built_year">Yapım yılı: %1$d</string>

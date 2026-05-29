@@ -146,9 +146,11 @@
                         app:tint="@color/brand_primary_dark" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:maxLines="2"
                         android:text="@string/action_directions"
                         android:textColor="@color/brand_text_secondary"
                         android:textSize="12sp" />
@@ -176,9 +178,11 @@
 
                     <TextView
                         android:id="@+id/label_favorite"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:maxLines="2"
                         android:text="@string/action_favorite"
                         android:textColor="@color/brand_text_secondary"
                         android:textSize="12sp" />
@@ -204,9 +208,11 @@
                         app:tint="@color/brand_primary_dark" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:maxLines="2"
                         android:text="@string/action_share"
                         android:textColor="@color/brand_text_secondary"
                         android:textSize="12sp" />
